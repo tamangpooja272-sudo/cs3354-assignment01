@@ -1,0 +1,57 @@
+/**
+ * A simple grocery management program that stores
+ * grocery item names, prices, and stock amounts.
+ */
+public class GroceryManagement {
+
+    /**
+     * Displays all grocery items that are currently stored.
+     *
+     * @param names  the names of the grocery items
+     * @param prices the prices of the grocery items
+     * @param stocks the amount of each item in stock
+     */
+    public static void printInventory(
+            String[] names, double[] prices, int[] stocks) {
+
+        // Go through every position in the arrays.
+        for (int i = 0; i < names.length; i++) {
+
+            // Only display positions that contain an item.
+            if (names[i] != null) {
+                System.out.println(
+                        names[i] + " - $" + prices[i]
+                        + " - Stock: " + stocks[i]);
+            }
+        }
+    }
+
+    /**
+     * Starts the grocery management program.
+     *
+     * @param args command-line arguments
+     */
+    public static void main(String[] args) {
+
+        // Parallel arrays store information about the same grocery items.
+        String[] itemNames = new String[10];
+        double[] itemPrices = new double[10];
+        int[] itemStocks = new int[10];
+
+        // Sample grocery items for testing.
+        itemNames[0] = "Apple";
+        itemPrices[0] = 1.50;
+        itemStocks[0] = 10;
+
+        itemNames[1] = "Milk";
+        itemPrices[1] = 3.50;
+        itemStocks[1] = 5;
+
+        itemNames[2] = "Bread";
+        itemPrices[2] = 2.50;
+        itemStocks[2] = 8;
+
+        // Display the inventory.
+        printInventory(itemNames, itemPrices, itemStocks);
+    }
+}

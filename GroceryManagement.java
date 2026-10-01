@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /**
  * A simple grocery management program that stores
  * grocery item names, prices, and stock amounts.
@@ -83,13 +84,44 @@ public static void restockItem(
         itemPrices[2] = 2.50;
         itemStocks[2] = 8;
 
-        // Display the inventory.
-        printInventory(itemNames, itemPrices, itemStocks);
+       Scanner scanner = new Scanner(System.in);
 
-        // Test the restock feature.
-        restockItem(itemNames, itemStocks, "Apple", 5);
+    while (true) {
 
-        // Display the inventory again to see the updated stock.
-        printInventory(itemNames, itemPrices, itemStocks);
+        System.out.println("\nInventory Menu");
+        System.out.println("1. View Inventory");
+        System.out.println("2. Restock Item");
+        System.out.println("3. Exit");
+        System.out.print("Please select an option: ");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice == 1) {
+
+            printInventory(itemNames, itemPrices, itemStocks);
+
+        } else if (choice == 2) {
+
+            System.out.print("Enter item name: ");
+            String target = scanner.nextLine();
+
+            System.out.print("Enter amount to add: ");
+            int amount = scanner.nextInt();
+            scanner.nextLine();
+
+            restockItem(itemNames, itemStocks, target, amount);
+
+        } else if (choice == 3) {
+
+            System.out.println("Goodbye!");
+            break;
+
+        } else {
+
+            System.out.println("Invalid option.");
+        }
     }
+
+    scanner.close();
 }

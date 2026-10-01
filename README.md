@@ -1,6 +1,6 @@
 # cs3354-assignment01
 CS3354 Assignment 1 - Grocery Management System using Java and parallel arrays.
-
+ ```
 HOW IT WORKS:
   This program uses parallel arrays to store information about the same grocery items. In this project, we have 3 parallel arrays. These are for the item names, prices, and total stock.
   We used a menu system to prompt the user to choose an action. Viewing the inventory calls printInventory(), which  prints all items(including name, price, and stock) that are not null. Restocking Items asks the user for an item name and the amount to add. 
@@ -17,7 +17,7 @@ WHO DID WHAT:
     The program should compile and run on any IDE that supports Java
 
   UML Class Diagram:
-  ```
+ 
   ------------------------------------------------------------------------------------------
   |                                  GroceryManagement                                     |
   ------------------------------------------------------------------------------------------

@@ -25,6 +25,38 @@ public class GroceryManagement {
             }
         }
     }
+    /**
+ * Searches for an item and adds more stock to it.
+ *
+ * @param names the names of the grocery items
+ * @param stocks the stock amounts
+ * @param target the item to restock
+ * @param amount the amount of stock to add
+ */
+public static void restockItem(
+        String[] names, int[] stocks, String target, int amount) {
+
+    // Check each position in the array.
+    for (int i = 0; i < names.length; i++) {
+
+        // Check if the item exists and matches the target.
+        if (names[i] != null && names[i].equals(target)) {
+
+            // Add the new amount to the current stock.
+            stocks[i] = stocks[i] + amount;
+
+            // Show the updated stock.
+            System.out.println(
+                    target + " restocked. New stock: " + stocks[i]);
+
+            // Stop after finding the item.
+            return;
+        }
+    }
+
+    // This message appears if the item was not found.
+    System.out.println("Item not found.");
+}
 
     /**
      * Starts the grocery management program.
@@ -52,6 +84,12 @@ public class GroceryManagement {
         itemStocks[2] = 8;
 
         // Display the inventory.
+        printInventory(itemNames, itemPrices, itemStocks);
+
+        // Test the restock feature.
+        restockItem(itemNames, itemStocks, "Apple", 5);
+
+        // Display the inventory again to see the updated stock.
         printInventory(itemNames, itemPrices, itemStocks);
     }
 }

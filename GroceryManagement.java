@@ -1,7 +1,12 @@
 import java.util.Scanner;
 /**
- * A simple grocery management program that stores
- * grocery item names, prices, and stock amounts.
+ * A grocery management program that stores item names, prices, and
+ * stock amounts in three parallel arrays, where the same index in each
+ * array refers to the same item. A menu lets the user view the
+ * inventory, restock an item, or exit.
+ *
+ * @author Pooja Tamang, Garett Mitchell, Ethan Alcaraz
+ * @version 1.0
  */
 public class GroceryManagement {
 
@@ -60,9 +65,11 @@ public static void restockItem(
 }
 
     /**
-     * Starts the grocery management program.
+     * Starts the grocery management program. Sets up the parallel arrays
+     * with sample items, then repeatedly shows a menu: 1 to view the
+     * inventory, 2 to restock an item, or 3 to exit.
      *
-     * @param args command-line arguments
+     * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {
 

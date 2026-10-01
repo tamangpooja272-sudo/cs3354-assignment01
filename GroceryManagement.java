@@ -114,7 +114,7 @@ public static void restockItem(
 
         } else if (choice == 3) {
 
-            System.out.println("Goodbye!");
+            System.out.println("Bye Bye!");
             break;
 
         } else {
@@ -124,4 +124,5 @@ public static void restockItem(
     }
 
     scanner.close();
+}
 }
